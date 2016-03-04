@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Class+</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--压缩-->
+    <meta http-equiv="content-encoding" content="application/gzip">
+    <!--用于清除缓存-->
+    <meta http-equiv="pragma" content="public">
+    <meta http-equiv="cache-control" content="public">
+    <meta http-equiv="expires" content="Dec, 31 Dec 2015 16:00:00 GMT">
+    <!--移动端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!--  Meta -->
+    <!--css初始化-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/3.0.0/css/font-awesome.min.css"/>
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css"/>-->
+    <!--<link rel="stylesheet" href="css/font-awesome.min.css"/>-->
+    <!--响应式框架-->
+    <!--自写style-->
+    <style>
+        body {
+            text-align: center;
+            background: #dbdddd;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            margin: 0px auto;
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                width: 740px;
+            }
+        }
+
+        .header-div-left > span,
+        .header-div-right > span {
+            margin: 0px auto;
+        }
+
+        .header-div-left .level span {
+            color: #00aff0;
+            font-size: 3em;
+            font-weight: 700;
+            line-height: 60px;
+        }
+
+        .header-div-left > span,
+        .header-div-right > span,
+        .header-div-center .center-center .times > span,
+        .center-center span {
+            font-family: "century Gothic", "黑体";
+        }
+
+        .header-div-right span {
+            display: block;
+            margin: 0px auto;
+            cursor:pointer;
+        }
+
+        .header-div-right img {
+            display: block;
+            width: 70px;
+            height: 70px;
+            -webkit-border-radius: 70px;
+            -moz-border-radius: 70px;
+            border-radius: 70px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: right;
+            margin: 0px auto;
+            cursor: pointer;
+        }
+        .center-left i,
+        .center-right i {
+            color: #00aff0;
+        }
+        .center-center .times > span {
+            color: #00aff0;
+            font-size: 2.5em;
+            font-weight: 700;
+            line-height: 37px;
+
+        }
+
+
+        @media (max-width: 400px) {
+            .header-div-right img {
+                width: 50px;
+                height: 50px;
+            }
+
+
+            .header-div-left .level span {
+                line-height: 30px;
+                font-size: 1.9em;
+
+            }
+
+            .header-div-left > span,
+            .header-div-right > span {
+                font-size: 0.5em;
+            }
+
+            .header-div-right a img {
+                width: 40px;
+                height: 40px;
+            }
+
+
+            .center-center .times > span {
+                font-size: 2em;
+                line-height: 30px;
+            }
+
+        }
+        .divider span {
+            text-align: center;
+            font-family: "century Gothic", "黑体";
+            font-size: 1.2em;
+        }
+        .red {
+            color: red;
+        }
+        .rank .rank-div span {
+            position: absolute;
+            top: 39%;
+            left: 22%;
+            color: #fff;
+            font-size: 1.6em;
+            font-family: "arial", "微软雅黑";
+        }
+        @media (max-width: 655px) {
+            .rank .rank-div span{
+                font-size: 1.2em;
+
+            }
+        }
+
+        .student-divider-number span {
+            font-size: 2em;
+            line-height: 65px;
+            color: #00aff0;
+        }
+
+        .background {
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            background: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+        }
+
+
+        .progressBar {
+            display: block;
+            width: 253px;
+            height: 56px;
+            top: 50%;
+            left: 45%;
+            margin-left: -74px;
+            margin-top: -14px;
+            padding: 10px 10px 10px 50px;
+            text-align: left;
+            line-height: 27px;
+            font-weight: bold;
+            position: absolute;
+            z-index: 2001;
+            border: solid 2px #86A5AD;
+        }
+
+
+
+        .list-container{
+            padding: 0px;
+        }
+
+        .list-header{
+            width: 100%;
+            height:50px;
+            background: #00aff0;
+            line-height: 50px;
+            position: relative;
+            margin-left: 0px;
+        }
+        .list-header span,
+        .list-header a{
+            font-size: 1.5em;
+            font-family: "century Gothic", "黑体";
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-icon{
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            font-size: 1.5em;
+        }
+
+        .list-content{
+            width: 100%;
+            margin: 0px;
+            display: inline-block;
+            position: relative;
+
+        }
+        .list-content hr{
+            margin: -4px;
+        }
+        .list-content-div{
+            display: inline-block;
+            width: 100%;
+        }
+        .list-content-div img{
+            width: 50px;
+            height: 50px;
+            display: inline;
+            text-align: left;
+            margin-top: 5px;
+            float: left;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .list-content-div span{
+            display: inline;
+            font-size: 1.2em;
+            font-family: "century Gothic", "黑体";
+            margin: 18px 0px;
+            float: left;
+        }
+        .list-content-div .list-name{
+            margin: 18px 0px 18px 10px;
+            width: 68px;
+            text-align: left;
+        }
+
+        .list-content-div .rank-number{
+            display: inline-block;
+        }
+
+
+        .red{
+            color: red;
+        }
+        .grey{
+            color: #787878;
+        }
+        .list-content-div .vary-grade{
+            margin: 18px 0px 18px 20px;
+        }
+        .list-content-div .rank-span{
+            color: #00aff0;
+            font-size: 1.5em;
+            margin: 15px 0px;
+            float: right;
+        }
+        .list-content-div .list-grade{
+            margin: 18px 10px;
+            float: right;
+
+        }
+    </style>
+</head>
+<body style="background: #fff">
+<div class="container list-container">
+    <div class="row list-header">
+        <a id="back" href="javascript:;"><i id="back-icon" class="icon-angle-left back-icon"></i></a>
+        <span id="typeName">加载中...</span>
+    </div>
+
+
+    <div id="list-content" class="list-content">
+
+
+        <script id="rank" type="text/html">
+            <!--名次列表-->
+            <%if(type == 0){%>
+            <%for(var i = 0;i<rankings.length;i++){%>
+            <div class="list-content-div">
+                <!--头像-->
+                <img src="http://115.28.26.202/picture/<%=rankings[i].pict%>" alt="">
+                <!--真实姓名-->
+                <span class="list-name"><%=rankings[i].realname%></span>
+                <!--总分-->
+                <span class="list-grade"><%=rankings[i].totalScore%>分</span>
+                <!--排名-->
+                <span class="rank-span">No.<%=(i+1)%></span>
+            </div>
+            </div>
+            <hr/>
+
+            <%}%>
+            <%}%>
+
+
+            <!-- 进步生 -->
+            <%if(type == 1){%>
+            <%for(var i = 0;i<results.length;i++){%>
+            <div class="list-content-div">
+                <!--头像-->
+                <img src="http://115.28.26.202/picture/<%=results[i].pict%>" alt="">
+                <!--真实姓名-->
+                <span class="list-name"><%=results[i].realname%></span>
+                <!--上升的名次-->
+                <span class="list-vary red"><i class="icon-arrow-up"></i><%=(results[i].range*100).toFixed(1)%>%</span>
+                <!--上升的分数-->
+                <span class="vary-grade red"><%=results[i].difference%>分</span>
+                <!--总分-->
+                <span class="list-grade"><%=results[i].totalScore%>分</span>
+
+            </div>
+            </div>
+            <hr/>
+            <%}%>
+            <%}%>
+
+            <!--退步生-->
+            <%if(type == 2){%>
+            <%for(var i = 0;i<results.length;i++){%>
+            <div class="list-content-div">
+                <!--头像-->
+                <img src="http://115.28.26.202/picture/zip/<%=results[i].pict%>" alt="">
+                <!--真实姓名-->
+                <span class="list-name"><%=results[i].realname%></span>
+
+                <!--上升的名次-->
+                <span class="list-vary grey"><i class="icon-arrow-down"></i><%=(Math.abs(results[i].range)*100).toFixed(1)%>%</span>
+                <!--上升的分数-->
+                <span class="vary-grade grey"><%=Math.abs(results[i].difference)%>分</span>
+
+
+                <!--总分-->
+                <span class="list-grade"><%=results[i].totalScore%>分</span>
+
+            </div>
+            </div>
+            <hr/>
+            <%}%>
+            <%}%>
+
+
+
+            <!--班级信息-->
+            <%if(type ==3){%>
+            <%for(var i = 0;i<rankings.length;i++){%>
+            <div class="list-content-div">
+                <!--头像-->
+                <img src="http://115.28.26.202/picture/<%=rankings[i].pict%>" alt="">
+                <!--真实姓名-->
+                <span class="list-name"><%=rankings[i].realname%></span>
+            </div>
+            </div>
+            <hr/>
+
+            <%}%>
+            <%}%>
+        </script>
+    </div>
+</div>
+
+<div id="background" class="background" style="display: none; "></div>
+<div id="progressBar" class="progressBar" style="display: none; "><i class="icon-2x icon-spinner icon-spin"></i>成绩加载中，请稍等...
+</div>
+
+
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!--<script src="js/jquery-1.11.3.min.js"></script>-->
+<script src="js/baiduTemplate.js"></script>
+<script src="js/list.js"></script>
+</body>
+</html>

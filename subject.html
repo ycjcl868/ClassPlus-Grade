@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <title>Class+</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--压缩-->
+    <meta http-equiv="content-encoding" content="application/gzip">
+    <!--用于清除缓存-->
+    <meta http-equiv="pragma" content="public">
+    <meta http-equiv="cache-control" content="public">
+    <meta http-equiv="expires" content="Dec, 31 Dec 2015 16:00:00 GMT">
+    <!--移动端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!--  Meta -->
+
+    <!--css初始化-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/3.0.0/css/font-awesome.min.css"/>
+    <!--响应式框架-->
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--自写style-->
+
+
+</head>
+<body>
+
+
+<div id="container" class="container">
+    <!--<div class="row list-header">-->
+        <!--<a id="back" href="javascript:;"><i id="back-icon" class="icon-angle-left back-icon"></i></a>-->
+        <!--<span id="typeName">成绩分析</span>-->
+    <!--</div>-->
+    <div class="row header">
+        <div class="header-div-left">
+            <div class="level">
+                <span>A</span>
+            </div>
+            <span>稳定指数</span>
+        </div>
+
+        <!--科目-->
+        <div class="header-div-center">
+            <span id="subject" class="student-subjects">加载中...</span>
+        </div>
+
+            <div class="header-div-right">
+                    <img id="pict"  src="img/logo.png" alt="">
+                <span id="classname">班级昵称</span>
+            </div>
+    </div>
+
+
+    <!--直线图-->
+    <div class="row-fluid">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+
+    <div class="divider student-divider-number">
+        <!--前一次考试-->
+        <a id="left-grade" href="#">
+            <div class="center-left"><i class="icon-arrow-left subject-i"></i></div>
+        </a>
+
+        <!--第几次考试-->
+        <div class="center-center">
+            <span id="times">No.1</span>
+        </div>
+
+        <!--后一次考试-->
+        <a id="right-grade" href="#">
+            <div class="center-right"><i class="icon-arrow-right subject-i"></i></div>
+        </a>
+
+    </div>
+
+    <hr/>
+
+    <!--&lt;!&ndash;优秀率&ndash;&gt;-->
+    <!--<script id="template" type="text/html">-->
+        <!--<%for(var i = 0;i<3;i++){%>-->
+
+        <!--<div class="subjects">-->
+            <!--<div id="<%=subjects[i]%>" class="subjects-chart"></div>-->
+            <!--<span class="subjects-grades">80</span>-->
+        <!--</div>-->
+        <!--<%}%>-->
+    <!--</script>-->
+
+
+
+    <div class="row rate">
+        <!--优秀率-->
+        <div class="subjects">
+            <div id="excellence" class="subjects-chart"></div>
+            <span class="subjects-grades">80</span>
+        </div>
+
+        <!--及格率-->
+        <div class="subjects">
+            <div id="pass" class="subjects-chart"></div>
+            <span class="subjects-grades">90</span>
+        </div>
+
+        <!--不及格率-->
+        <div class="subjects">
+            <div id="fail" class="subjects-chart"></div>
+            <span class="subjects-grades">90</span>
+        </div>
+    </div>
+
+
+    <div class="row subjects-div">
+        <!--最高成绩-->
+        <div class="subjects">
+            <div id="highest" class="subjects-chart"></div>
+            <span class="subjects-grades">80</span>
+        </div>
+        <!--平均成绩-->
+        <div class="subjects">
+            <div id="average" class="subjects-chart"></div>
+            <span class="subjects-grades">90</span>
+        </div>
+        <!--最低成绩-->
+        <div class="subjects">
+            <div id="lowest" class="subjects-chart"></div>
+            <span class="subjects-grades">90</span>
+        </div>
+    </div>
+
+
+    <div class="row rate">
+        <!--上次排名-->
+        <div class="subjects">
+            <div id="lastRanking" class="subjects-chart"></div>
+            <span class="subjects-grades">80</span>
+        </div>
+        <!--本次排名-->
+        <div class="subjects">
+            <div id="thisRanking" class="subjects-chart"></div>
+            <span class="subjects-grades">80</span>
+        </div>
+        <!--下次排名-->
+        <div class="subjects">
+            <div id="goalRanking" class="subjects-chart"></div>
+            <span class="subjects-grades">90</span>
+        </div>
+    </div>
+
+</div>
+
+
+<!--等待加载-->
+<div id="background" class="background" style="display: none; "></div>
+<div id="progressBar" class="progressBar" style="display: none; "><i class="icon-2x icon-spinner icon-spin"></i>成绩加载中，请稍等...
+</div>
+
+
+</body>
+
+</html>
+
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/canvas.js"></script>
+<script src="js/subject.js"></script>
+</body>
+</html>
+
+
+
